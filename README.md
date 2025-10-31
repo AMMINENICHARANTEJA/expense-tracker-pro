@@ -1,4 +1,4 @@
-# 💰 Expense Tracker Pro
+#  Expense Tracker Pro
 
 **Expense Tracker Pro** is a modern web application built with **React.js** that helps users manage and analyze daily expenses effectively.  
 It includes full **CRUD operations**, **category/date filters**, **CSV export**, and a **visual summary chart**, all inside a clean, responsive interface.

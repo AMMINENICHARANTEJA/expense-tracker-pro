@@ -1,0 +1,313 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Base Styles ===== */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(to right, #fdf2f8, #ede9fe, #e0e7ff);
+  color: #1f2937;
+}
+
+/* ===== App Container ===== */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+.app-header {
+  background: linear-gradient(90deg, #8b5cf6, #6366f1);
+  color: white;
+  text-align: center;
+  padding: 1.3rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.app-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-top: 6px;
+}
+
+/* ===== Main Content ===== */
+.content {
+  flex: 1;
+  padding: 30px 40px;
+  background: rgba(255, 255, 255, 0.97);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* ===== Expense Form ===== */
+.form-section {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.expense-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.expense-form input,
+.expense-form select {
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  min-width: 150px;
+  font-size: 0.95rem;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.expense-form input:focus,
+.expense-form select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.add-button,
+.cancel-button {
+  border: none;
+  border-radius: 6px;
+  padding: 9px 15px;
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+  transition: all 0.25s ease;
+}
+
+.add-button {
+  background-color: #4f46e5;
+}
+.add-button:hover {
+  background-color: #4338ca;
+  transform: scale(1.03);
+}
+
+.cancel-button {
+  background-color: #9ca3af;
+}
+.cancel-button:hover {
+  background-color: #6b7280;
+  transform: scale(1.03);
+}
+
+/* ===== Filter Section (with CSV Export) ===== */
+.filter-section {
+  background-color: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  max-width: 950px;
+  margin: 0 auto 25px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.filter-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section h2 {
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+  color: #4f46e5;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.filters select,
+.filters input {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  min-width: 150px;
+  font-size: 0.9rem;
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.filters select:focus,
+.filters input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+/* Buttons (Reset + Export CSV) */
+.reset-button,
+.export-button {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+  transition: all 0.25s ease;
+}
+
+/* Reset Button */
+.reset-button {
+  background-color: #6366f1;
+}
+.reset-button:hover {
+  background-color: #4f46e5;
+  transform: scale(1.05);
+}
+
+/* Export CSV Button */
+.export-button {
+  background-color: #10b981;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+}
+.export-button:hover {
+  background-color: #059669;
+  transform: scale(1.05);
+  box-shadow: 0 3px 8px rgba(5, 150, 105, 0.3);
+}
+
+/* ===== Table + Chart Layout ===== */
+.data-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Table Section ===== */
+.table-section {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-section th,
+.table-section td {
+  border: 1px solid #e5e7eb;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.table-section th {
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 500;
+}
+
+.table-section tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.table-section tr:hover {
+  background-color: #eef2ff;
+  transition: background 0.3s ease;
+}
+
+.edit-button,
+.delete-button {
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.edit-button {
+  background-color: #fbbf24;
+}
+.edit-button:hover {
+  background-color: #f59e0b;
+  transform: scale(1.05);
+}
+
+.delete-button {
+  background-color: #ef4444;
+  color: white;
+}
+.delete-button:hover {
+  background-color: #dc2626;
+  transform: scale(1.05);
+}
+
+.no-data {
+  text-align: center;
+  padding: 15px;
+  color: #6b7280;
+}
+
+/* ===== Chart Section ===== */
+.chart-section {
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.chart-section canvas {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .data-section {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-section {
+    margin-top: 20px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+}
